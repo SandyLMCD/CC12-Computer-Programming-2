@@ -1,0 +1,36 @@
+package pack;
+
+public class powerCalculationClass {
+	
+	// powerRecursive function (int baseNum, expoNum)
+	public static int powerRecursive(int baseNum, int expoNum) {
+		if (expoNum == 0) {
+			return 1; 
+		} else {
+			return baseNum * powerRecursive(baseNum, expoNum - 1);
+		}
+	}
+	
+	// MAIN METHOD // 
+	
+	public static void main(String[] args) {
+
+		System.out.println("Base Number = 4");
+		System.out.println("Exponent = 3");
+		System.out.println("Output = " + powerRecursive(4, 3));
+		
+		System.out.println(" ");
+		
+		System.out.println("Base Number = 8");
+		System.out.println("Exponent = 4");
+		System.out.println("Output = " + powerRecursive(8, 4));
+
+		System.out.println(" ");
+		
+		System.out.println("Base Number = 9");
+		System.out.println("Exponent = 8");
+		System.out.println("Output = " + powerRecursive(9, 8));
+		
+	}
+
+}
