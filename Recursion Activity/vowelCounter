@@ -1,0 +1,33 @@
+package pack;
+
+public class vowelCounterClass {
+
+	public static int countVowelsRecursive(String sentVowels) {
+
+		if (sentVowels.isEmpty()) {
+			return 0; //This means that we have reached the end of the recursion
+		}
+		
+		//This extracts the first character from the string 'sentVowels' and convert it into lowercase using the Character.toLowerCase()
+		char currentChar = Character.toLowerCase(sentVowels.charAt(0));
+		
+		
+		if ("aeiouAEIOU".contains(String.valueOf(currentChar))) {
+			//If character is a vowel, it records 1 plus the remaining recursion results for the remaining letters in the string
+			return 1 + countVowelsRecursive(sentVowels.substring(1));
+		} else {
+			return countVowelsRecursive(sentVowels.substring(1));
+		}
+		
+	}
+	
+
+	public static void main(String[] args) {
+		
+		String sentence1 = "Hello! My name is Sandy Lumacad";
+
+		System.out.println("The number of vowels in the given sentence is " + countVowelsRecursive(sentence1));
+
+	}
+
+}
