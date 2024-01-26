@@ -1,0 +1,62 @@
+package pack;
+import java.util.Arrays;
+
+public class bubbleSortClass2 {
+
+	public static void bubbleSort(int[] arrayToBeSorted, int arrayLength) {
+
+		if (arrayLength <= 1) {
+			return;
+		}
+
+		int indexSecondNum;
+
+		for (int indexFirstNum = 0 ; indexFirstNum < arrayLength - 1 ; indexFirstNum++) {
+			indexSecondNum = indexFirstNum + 1;
+			if (arrayToBeSorted[indexFirstNum] > arrayToBeSorted[indexSecondNum]) {
+				int temp;
+				temp = arrayToBeSorted[indexFirstNum];
+				arrayToBeSorted[indexFirstNum] = arrayToBeSorted[indexSecondNum];
+				arrayToBeSorted[indexSecondNum] = temp;
+			}
+		}
+
+		bubbleSort(arrayToBeSorted, arrayLength - 1);
+
+	}
+
+	// MAIN METHOD //
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//int arrayLength = 5; // Array can only store up to 5 values
+
+		int[] firstArray = {28, 13, 5, 43, 1};
+
+		System.out.println("The element of the first array before the bubble sort are: ");
+		System.out.println(Arrays.toString(firstArray)); 
+
+		System.out.println("");
+
+		System.out.println("The elements of the first array after the bubble sort are: " );
+		bubbleSort(firstArray, firstArray.length); 
+		System.out.println(Arrays.toString(firstArray));
+
+		System.out.println("");
+		System.out.println("");
+
+		int[] secondArray = {45, 34, 6, 32, 3};
+
+		System.out.println("The element of the second array before the bubble sort are: ");
+		System.out.println(Arrays.toString(secondArray)); 
+
+		System.out.println("");
+
+		System.out.println("The elements of the second array after the bubble sort are: " );
+		bubbleSort(secondArray, secondArray.length); 
+		System.out.println(Arrays.toString(secondArray));
+
+	}
+
+}
